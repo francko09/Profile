@@ -34,8 +34,8 @@ const StartupForm = () => {
 
       if (result.status == "SUCCESS") {
         toast({
-          title: "Success",
-          description: "Your startup pitch has been created successfully",
+          title: 'Succès',
+          description: 'Votre pitch de startup a été créé avec succès',
         });
 
         router.push(`/startup/${result._id}`);
@@ -49,24 +49,24 @@ const StartupForm = () => {
         setErrors(fieldErorrs as unknown as Record<string, string>);
 
         toast({
-          title: "Error",
-          description: "Please check your inputs and try again",
-          variant: "destructive",
+          title: 'Error',
+          description: 'Veuillez vérifier vos entrées et réessayer',
+          variant: 'destructive',
         });
 
         return { ...prevState, error: "Validation failed", status: "ERROR" };
       }
 
       toast({
-        title: "Error",
-        description: "An unexpected error has occurred",
-        variant: "destructive",
+        title: 'Error',
+        description: "Une erreur inattendue s'est produite",
+        variant: 'destructive',
       });
 
       return {
         ...prevState,
-        error: "An unexpected error has occurred",
-        status: "ERROR",
+        error: "Une erreur inattendue s'est produite",
+        status: 'ERROR',
       };
     }
   };
@@ -80,7 +80,7 @@ const StartupForm = () => {
     <form action={formAction} className="startup-form">
       <div>
         <label htmlFor="title" className="startup-form_label">
-          Title
+          Titre
         </label>
         <Input
           id="title"
@@ -112,7 +112,7 @@ const StartupForm = () => {
 
       <div>
         <label htmlFor="category" className="startup-form_label">
-          Category
+          Catégorie
         </label>
         <Input
           id="category"
@@ -129,7 +129,7 @@ const StartupForm = () => {
 
       <div>
         <label htmlFor="link" className="startup-form_label">
-          Image URL
+          URL de l'mage
         </label>
         <Input
           id="link"
@@ -153,13 +153,13 @@ const StartupForm = () => {
           id="pitch"
           preview="edit"
           height={300}
-          style={{ borderRadius: 20, overflow: "hidden" }}
+          style={{ borderRadius: 20, overflow: 'hidden' }}
           textareaProps={{
             placeholder:
-              "Briefly describe your idea and what problem it solves",
+              'Briefly describe your idea and what problem it solves'
           }}
           previewOptions={{
-            disallowedElements: ["style"],
+            disallowedElements: ['style'],
           }}
         />
 
@@ -171,7 +171,7 @@ const StartupForm = () => {
         className="startup-form_btn text-white"
         disabled={isPending}
       >
-        {isPending ? "Submitting..." : "Submit Your Pitch"}
+        {isPending ? 'Submitting...' : 'Submit Your Pitch'}
         <Send className="size-6 ml-2" />
       </Button>
     </form>

@@ -56,8 +56,8 @@ const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YC Directory",
-  description: "Pitch, Vote and Grow",
+  title: "Le Profile",
+  description: "Voici les profiles des entrepreneurs de Lomé",
 };
 
 export default function RootLayout({
