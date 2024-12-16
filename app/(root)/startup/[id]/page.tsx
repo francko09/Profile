@@ -1,18 +1,18 @@
-import { Suspense } from "react";
-import { client } from "@/sanity/lib/client";
+import { Suspense } from 'react';
+import { client } from '@/sanity/lib/client';
 import {
   PLAYLIST_BY_SLUG_QUERY,
   STARTUP_BY_ID_QUERY,
-} from "@/sanity/lib/queries";
-import { notFound } from "next/navigation";
-import { formatDate } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
+} from '@/sanity/lib/queries';
+import { notFound } from 'next/navigation';
+import { formatDate } from '@/lib/utils';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import markdownit from "markdown-it";
-import { Skeleton } from "@/components/ui/skeleton";
-import View from "@/components/View";
-import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
+import markdownit from 'markdown-it';
+import { Skeleton } from '@/components/ui/skeleton';
+import View from '@/components/View';
+import StartupCard, { StartupTypeCard } from '@/components/StartupCard';
 
 const md = markdownit();
 
@@ -23,13 +23,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   const [post, editorPostsResult] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
-    client.fetch(PLAYLIST_BY_SLUG_QUERY, { slug: "editor-picks-new" }),
+    client.fetch(PLAYLIST_BY_SLUG_QUERY, { slug: 'editor-picks-new' }),
   ]);
 
   if (!post) return notFound();
 
   const editorPosts = editorPostsResult?.select || []; // Gère les données manquantes
-  const parsedContent = md.render(post?.pitch || "");
+  const parsedContent = md.render(post?.pitch || '');
 
   return (
     <>
@@ -70,14 +70,14 @@ const Page = async ({ params }: { params: { id: string } }) => {
             <p className="category-tag">{post.category}</p>
           </div>
 
-          <h3 className="text-30-bold">Pitch Details</h3>
+          <h3 className="text-30-bold">Détails du Profile</h3>
           {parsedContent ? (
             <article
               className="prose max-w-4xl font-work-sans break-all"
               dangerouslySetInnerHTML={{ __html: parsedContent }}
             />
           ) : (
-            <p className="no-result">No details provided</p>
+            <p className="no-result">Pas de détails enregistrés</p>
           )}
         </div>
 
@@ -101,6 +101,5 @@ const Page = async ({ params }: { params: { id: string } }) => {
     </>
   );
 };
-
 
 export default Page;

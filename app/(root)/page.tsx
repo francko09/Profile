@@ -22,13 +22,12 @@ export default async function Home({
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Présentez votre startup, <br />
-          Connectez-vous avec des entrepreneurs
+          Vous cherchez des produits ou services? <br />
+          Vous êtes au bon endroit
         </h1>
 
         <p className="sub-heading !max-w-3xl">
-          Soumettez des idées, votez sur des pitchs et faites-vous remarquer en
-          virtuel Compétitions.
+          Soumettez des vos produits et services sur "Le-profile" pour avoir plus de visibiliter, plus de clients et augmenter votre chiffre d'affaire.
         </p>
 
         <SearchForm query={query} />
@@ -36,7 +35,7 @@ export default async function Home({
 
       <section className="section_container">
         <p className="text-30-semibold">
-          {query ? `Search results for "${query}"` : 'All Startups'}
+          {query ? `Search results for "${query}"` : 'Tous les profiles'}
         </p>
 
         <ul className="mt-7 card_grid">

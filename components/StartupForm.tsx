@@ -87,7 +87,7 @@ const StartupForm = () => {
           name="title"
           className="startup-form_input"
           required
-          placeholder="Startup Title"
+          placeholder="Titre de Startup"
         />
 
         {errors.title && <p className="startup-form_error">{errors.title}</p>}
@@ -102,7 +102,7 @@ const StartupForm = () => {
           name="description"
           className="startup-form_textarea"
           required
-          placeholder="Startup Description"
+          placeholder="Description du Startup"
         />
 
         {errors.description && (
@@ -119,7 +119,7 @@ const StartupForm = () => {
           name="category"
           className="startup-form_input"
           required
-          placeholder="Startup Category (Tech, Health, Education...)"
+          placeholder="Catégorie du  Startup (Tech, Santé, Education...)"
         />
 
         {errors.category && (
@@ -136,7 +136,7 @@ const StartupForm = () => {
           name="link"
           className="startup-form_input"
           required
-          placeholder="Startup Image URL"
+          placeholder="URL de l'image du Startup"
         />
 
         {errors.link && <p className="startup-form_error">{errors.link}</p>}
@@ -156,7 +156,7 @@ const StartupForm = () => {
           style={{ borderRadius: 20, overflow: 'hidden' }}
           textareaProps={{
             placeholder:
-              'Briefly describe your idea and what problem it solves'
+              'Briefly describe your idea and what problem it solves',
           }}
           previewOptions={{
             disallowedElements: ['style'],
