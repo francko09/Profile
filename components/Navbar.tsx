@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { auth, signOut, signIn } from "@/auth";
-import { BadgePlus, LogOut } from "lucide-react";
+import { BadgePlus, LogOut, MessageCircle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Navbar = async () => {
@@ -14,6 +14,11 @@ const Navbar = async () => {
           <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
 
+        <Link href="https://wa.me/22897209728" target="_blank">
+          <span className="max-sm:hidden">Contact</span>
+          <MessageCircle className="size-6 sm:hidden" />
+        </Link>
+
         <div className="flex items-center gap-5 text-black">
           {session && session?.user ? (
             <>
@@ -24,9 +29,9 @@ const Navbar = async () => {
 
               <form
                 action={async () => {
-                  "use server";
+                  'use server';
 
-                  await signOut({ redirectTo: "/" });
+                  await signOut({ redirectTo: '/' });
                 }}
               >
                 <button type="submit">
@@ -38,8 +43,8 @@ const Navbar = async () => {
               <Link href={`/user/${session?.id}`}>
                 <Avatar className="size-10">
                   <AvatarImage
-                    src={session?.user?.image || ""}
-                    alt={session?.user?.name || ""}
+                    src={session?.user?.image || ''}
+                    alt={session?.user?.name || ''}
                   />
                   <AvatarFallback>AV</AvatarFallback>
                 </Avatar>
@@ -48,9 +53,9 @@ const Navbar = async () => {
           ) : (
             <form
               action={async () => {
-                "use server";
+                'use server';
 
-                await signIn("github");
+                await signIn('github');
               }}
             >
               <button type="submit">Login</button>

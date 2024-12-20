@@ -27,7 +27,7 @@ export default async function Home({
         </h1>
 
         <p className="sub-heading !max-w-3xl">
-          Soumettez des vos produits et services sur "Le-profile" pour avoir plus de visibiliter, plus de clients et augmenter votre chiffre d'affaire.
+          Soumettez vos produits et services sur "Le-profile" pour avoir plus de visibiliter, plus de clients et augmenter votre chiffre d'affaire.
         </p>
 
         <SearchForm query={query} />
